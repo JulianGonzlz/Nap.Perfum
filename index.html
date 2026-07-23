@@ -3,13 +3,225 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=src/Estructura/index.html">
-  <title>Nap Perfum</title>
+  <meta name="theme-color" content="#0f172a">
+  <title>Nap Perfum | Stock de Perfumes</title>
+  <link rel="stylesheet" href="src/Estilo/styles.css">
 </head>
 <body>
-  <p>Redirigiendo a la página principal...</p>
-  <script>
-    window.location.replace('src/Estructura/index.html');
+  <header class="topbar">
+    <button class="menu-toggle" id="openSidebar" aria-expanded="false" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="brand" href="#productos-destacados" aria-label="Ir a productos destacados">Nap Perfum</a>
+    <a class="contact-icon" href="#contacto" aria-label="Ir al contacto">📲</a>
+  </header>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebarMenu" aria-label="Menú lateral">
+    <div class="sidebar-head">
+      <h3>Filtrar perfumes</h3>
+      <button class="close-btn" id="closeSidebar" aria-label="Cerrar menú">×</button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="filter-link home-link" href="#" aria-label="Volver al inicio">Volver al inicio</a>
+      <p class="nav-title">Por marca</p>
+      <button class="filter-link active" data-filter="all">Todos</button>
+      <button class="filter-link" data-filter="brand" data-value="Maison de Nuit">Maison de Nuit</button>
+      <button class="filter-link" data-filter="brand" data-value="Velvet">Velvet</button>
+      <button class="filter-link" data-filter="brand" data-value="Ocean">Ocean</button>
+      <button class="filter-link" data-filter="brand" data-value="Cedar">Cedar</button>
+
+      <p class="nav-title">Por género</p>
+      <button class="filter-link" data-filter="gender" data-value="Femenino">Femenino</button>
+      <button class="filter-link" data-filter="gender" data-value="Masculino">Masculino</button>
+      <button class="filter-link" data-filter="gender" data-value="Unisex">Unisex</button>
+    </nav>
+  </aside>
+
+  <main class="shell">
+    <section class="hero" aria-label="Productos destacados">
+      <div class="eyebrow">Nap Perfum · Destacados</div>
+      <h1>Descubrí los perfumes más destacados de la semana.</h1>
+      <p>Una vista simple y elegante para mostrar solo los productos destacados.</p>
+    </section>
+
+    <section class="section" id="productos-destacados">
+      <div class="section-head">
+        <h2>Productos destacados</h2>
+        <span>Selección premium</span>
+      </div>
+
+      <div class="grid" id="productosGrid"></div>
+    </section>
+
+    <section class="section" id="hombre">
+      <div class="section-head">
+        <h2>Perfumes para hombre</h2>
+        <span>Selección masculina</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-top">
+            <div class="image-carousel" aria-label="Carrusel de imágenes del perfume Noir Signature">
+              <button class="carousel-btn prev" type="button" aria-label="Ver imagen anterior">‹</button>
+              <div class="carousel-viewport">
+                <div class="carousel-image is-active" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80');">
+                  <span>Noir Signature</span>
+                </div>
+                <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80');">
+                  <span>Noir Signature</span>
+                </div>
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Ver imagen siguiente">›</button>
+            </div>
+            <div>
+              <h3>Noir Signature</h3>
+              <div class="meta">
+                <span class="tag">Maison de Nuit</span>
+                <span class="tag">100 ml</span>
+              </div>
+              <p class="desc">Una fragancia intensa y elegante con notas amaderadas y especiadas.</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="price">$26.900</div>
+            <div class="price decant">Decant $13.900</div>
+            <div class="stock ok">Disponible · 5 frascos · 3 decants</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="image-carousel" aria-label="Carrusel de imágenes del perfume Cedar Force">
+              <button class="carousel-btn prev" type="button" aria-label="Ver imagen anterior">‹</button>
+              <div class="carousel-viewport">
+                <div class="carousel-image is-active" style="background-image: url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80');">
+                  <span>Cedar Force</span>
+                </div>
+                <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80');">
+                  <span>Cedar Force</span>
+                </div>
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Ver imagen siguiente">›</button>
+            </div>
+            <div>
+              <h3>Cedar Force</h3>
+              <div class="meta">
+                <span class="tag">Cedar</span>
+                <span class="tag">100 ml</span>
+              </div>
+              <p class="desc">Fresco y masculino, con un perfil limpio ideal para el día a día.</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="price">$22.800</div>
+            <div class="price decant">Decant $11.200</div>
+            <div class="stock ok">Disponible · 4 frascos · 2 decants</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div class="image-carousel" aria-label="Carrusel de imágenes del perfume Ocean Drift">
+              <button class="carousel-btn prev" type="button" aria-label="Ver imagen anterior">‹</button>
+              <div class="carousel-viewport">
+                <div class="carousel-image is-active" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80');">
+                  <span>Ocean Drift</span>
+                </div>
+                <div class="carousel-image" style="background-image: url('https://images.unsplash.com/photo-1563170351-be82ae4c9e64?auto=format&fit=crop&w=900&q=80');">
+                  <span>Ocean Drift</span>
+                </div>
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Ver imagen siguiente">›</button>
+            </div>
+            <div>
+              <h3>Ocean Drift</h3>
+              <div class="meta">
+                <span class="tag">Ocean</span>
+                <span class="tag">100 ml</span>
+              </div>
+              <p class="desc">Una propuesta marina y refrescante con un toque urbano y muy versátil.</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="price">$24.500</div>
+            <div class="price decant">Decant $12.000</div>
+            <div class="stock low">Últimos 3 frascos · 4 decants</div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button class="scroll-top" id="scrollTopBtn" aria-label="Volver arriba" title="Volver arriba">↑</button>
+
+  <footer class="footer" id="contacto">
+    <p><strong>Contacto</strong></p>
+    <p>WhatsApp: +54 9 11 1234-5678</p>
+    <p>Instagram: @napperfum</p>
+    <p>Email: contacto@napperfum.com</p>
+  </footer>
+
+  <script id="productos-data" type="application/json">
+    {
+      "productos": [
+        {
+          "id": 1,
+          "nombre": "Amber Nuit",
+          "marca": "Maison de Nuit",
+          "genero": "Femenino",
+          "tamano": "100 ml",
+          "descripcion": "Fragancia intensa con vainilla, ámbar y salida especiada. Ideal para la noche. Se vende en frasco entero o en decant más económico.",
+          "precioFrasco": 24900,
+          "precioDecant": 12000,
+          "stockClase": "ok",
+          "stockTexto": "Disponible · 6 frascos · 4 decants",
+          "imagenes": [
+            "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80"
+          ]
+        },
+        {
+          "id": 2,
+          "nombre": "Velvet Rose",
+          "marca": "Velvet",
+          "genero": "Femenino",
+          "tamano": "50 ml",
+          "descripcion": "Rosa suave con fondo limpio y elegante. Muy versátil para uso diario. También disponible en decant a precio accesible.",
+          "precioFrasco": 18500,
+          "precioDecant": 9500,
+          "stockClase": "low",
+          "stockTexto": "Últimas 2 frascos · 3 decants",
+          "imagenes": [
+            "https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=900&q=80"
+          ]
+        },
+        {
+          "id": 3,
+          "nombre": "Ocean Pulse",
+          "marca": "Ocean",
+          "genero": "Unisex",
+          "tamano": "100 ml",
+          "descripcion": "Salida cítrica con notas acuáticas, fresca y muy versátil para el día. También disponible en decant a precio accesible.",
+          "precioFrasco": 22000,
+          "precioDecant": 11000,
+          "stockClase": "ok",
+          "stockTexto": "Disponible · 4 frascos · 5 decants",
+          "imagenes": [
+            "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80",
+            "https://images.unsplash.com/photo-1563170351-be82ae4c9e64?auto=format&fit=crop&w=900&q=80"
+          ]
+        }
+      ]
+    }
   </script>
+
+  <script src="src/Script/app.js"></script>
 </body>
 </html>

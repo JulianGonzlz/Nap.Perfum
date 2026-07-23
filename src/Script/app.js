@@ -145,7 +145,7 @@ scrollTopBtn?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-function cargarProductos() {
+async function cargarProductos() {
   if (productosDataScript) {
     try {
       const data = JSON.parse(productosDataScript.textContent);
@@ -157,18 +157,30 @@ function cargarProductos() {
     }
   }
 
-  fetch('../data/productos.json')
-    .then((response) => response.json())
-    .then((data) => {
+  const rutas = [
+    new URL('./src/data/productos.json', window.location.href).toString(),
+    new URL('../data/productos.json', window.location.href).toString(),
+    new URL('./data/productos.json', window.location.href).toString()
+  ];
+
+  for (const ruta of rutas) {
+    try {
+      const response = await fetch(ruta);
+      if (!response.ok) continue;
+
+      const data = await response.json();
       productos = data.productos;
       renderProductos(productos);
-    })
-    .catch((error) => {
-      console.error('No se pudieron cargar los productos:', error);
-      if (resultsLabel) {
-        resultsLabel.textContent = 'No se pudieron cargar los perfumes';
-      }
-    });
+      return;
+    } catch (error) {
+      console.warn(`No se pudo cargar el JSON desde ${ruta}:`, error);
+    }
+  }
+
+  console.error('No se pudieron cargar los productos');
+  if (resultsLabel) {
+    resultsLabel.textContent = 'No se pudieron cargar los perfumes';
+  }
 }
 
 cargarProductos();
