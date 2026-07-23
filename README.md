@@ -1,18 +1,10 @@
-## Getting Started
+# Nap Perfum
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Esta es la página web de Nap Perfum, preparada para ser publicada en GitHub Pages.
 
-## Folder Structure
+## Archivos principales
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- La portada principal está en [index.html](index.html)
+- La tienda se encuentra en [src/Estructura/index.html](src/Estructura/index.html)
+- Los estilos están en [src/Estilo/styles.css](src/Estilo/styles.css)
+- El comportamiento está en [src/Script/app.js](src/Script/app.js)
