@@ -112,7 +112,16 @@ function setupCarousels() {
 }
 
 filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (event) => {
+    if (button.tagName === 'A' && button.getAttribute('href')) {
+      event.preventDefault();
+      const target = button.getAttribute('href');
+      window.location.href = target;
+      return;
+    }
+
+    event.preventDefault();
+
     const filterType = button.dataset.filter || 'all';
     const value = button.dataset.value || '';
 
