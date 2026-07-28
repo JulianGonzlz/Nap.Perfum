@@ -111,37 +111,6 @@ function setupCarousels() {
   });
 }
 
-filterButtons.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    if (button.tagName === 'A' && button.getAttribute('href')) {
-      event.preventDefault();
-      const target = button.getAttribute('href');
-      window.location.href = target;
-      return;
-    }
-
-    event.preventDefault();
-
-    const filterType = button.dataset.filter || 'all';
-    const value = button.dataset.value || '';
-
-    filterButtons.forEach((item) => {
-      item.classList.toggle(
-        'active',
-        item === button || (filterType === 'all' && item.dataset.filter === 'all')
-      );
-    });
-
-    if (filterType === 'all') {
-      renderProductos(productos);
-    } else {
-      applyFilter(filterType, value);
-    }
-
-    toggleSidebar(false);
-  });
-});
-
 window.addEventListener('scroll', () => {
   if (window.scrollY > 400) {
     scrollTopBtn?.classList.add('is-visible');
